@@ -10,20 +10,6 @@ ext_train = '*.mp4'
 # time interval to ocr from video
 time_interval = 1 # in seconds
 
-"""
-specify the position of each digit to be recognized
-████████████████████  
-██     │          ██  D = digit
-██    Y│          ██  X e Y = position of the digit
-██  X  │          ██  H e W = height and width of the digit
-██─────╔═══╗      ██  
-██    H║ D ║      ██  
-██     ╚═══╝      ██  
-██       W        ██  
-██                ██  
-████████████████████
-"""
-
 # height and width of the digits
 h = 12
 w = 9
