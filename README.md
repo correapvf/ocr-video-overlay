@@ -1,4 +1,4 @@
-# OCR for low resolution video overlay
+# OCR for overlay in low resolution video
 
 ### A script to extract information (e.g. time, coordinates, depth, etc) from a video overlay. 
 
