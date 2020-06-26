@@ -1,14 +1,14 @@
 # folder with img files (frames) to train the model
 # choose frames so you have at least 10 occurrences for each digit
-train_folder = r'C:\Users\paulo\Documents\overlay'
+train_folder = 'path/to/folder'
 ext_train = '*.jpg'
 
 # folder with video files to recognize
-ocr_folder = r'C:\Users\paulo\Documents'
+ocr_folder = 'path/to/folder'
 ext_train = '*.mp4'
 
-# time interval to ocr from video
-time_interval = 1 # in seconds
+# time interval to ocr from video (process frame every X seconds)
+time_interval = 1
 
 # height and width of the digits
 h = 12
@@ -35,19 +35,20 @@ depthj = [396,406,416,436,446]
 depthi = 22
 
 # define funcions to format the strings for each number
+# see a few examples
 def timef(time):
     # 1234567 --> 12:34:56
-    return '' #'{}{}:{}{}:{}{}'.format(*time)
+    return '{}{}:{}{}:{}{}'.format(*time)
 
 def decimalf(string):
     # 12345 --> 123.45 (last two digits are decimals)
     return string[:-2] + '.' + string[-2:]
 
 # edit these list as you add or remove numbers
-ifor = [timei, northingi, eastingi, depthi]
-jfor = [timej, northingj, eastingj, depthj]
-ffor = [timef, decimalf, decimalf, decimalf]
-names = ['time','northing', 'easting', 'depth']
+ifor = [timei, northingi, eastingi, depthi] # Y values
+jfor = [timej, northingj, eastingj, depthj] # X values
+ffor = [timef, decimalf, decimalf, decimalf] # function to format string 
+names = ['time','northing', 'easting', 'depth'] # colum name for the csv
 
 # use blank positions (without position) to train the model
 # use when a number has a variable number of digits (eg. depth from 1200 to 800)
@@ -62,5 +63,5 @@ blanki = [22,22]
 dist_thr = 200000
 
 # set channel to use (0=blue, 1=green, 2=red)
-# you shoulf pick one 
+# you should pick one that have the highest contrast between the digit and background
 channel = 2
